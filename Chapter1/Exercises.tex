@@ -65,8 +65,9 @@
 
 \begin{document}
 
+  \section*{Chapter 1}
   \subsection*{Section 1}
-  \exercise{1} 
+  \exercise{1.1.i} 
   \begin{itemize}
     \item[(i)] Let $f : x \ra y$ be a morphism and $g, g' : y \ra x$ be inverses. Then $fg = \id_y$ and $gf = \id_x$ (resp $g'$). Hence $gf = g'f$ so 
     \begin{align*} 
@@ -83,11 +84,11 @@
   Hence $fg = \id_y$ and $gf = \id_x$ so $f$ is an isomorphism. ///
   \end{itemize}
 
-  \exercise{2}
+  \exercise{1.1.ii}
   Consider a category $C$ and the subset of isomorphisms it contains. The subset contains the identity morphisms for each object because the identity is an isomorphism. The subset inherits associativity from $C$. Now pick two isomorphisms $f : x \ra y$ and $g : y \ra z$ and consider $gf$. We have $(f^{-1}g^{-1})gf = f^{-1}g^{-1}gf = f^{-1}f = \id_x$ and $gf(f^{-1}g^{-1}) = \id_y$ so $gf$ is also an isomorphism. Hence $C$ contains a maximal groupoid. ///
   
 
-  \exercise{3}
+  \exercise{1.1.iii}
   \begin{itemize}
     \item[(i)] Observe that for any object $f : c \ra x$ in $c/C$, the morphism $\id_x : x \ra x$ is the identity morphism for $f$. Now pick two morphisms in $c/C$, $h : x \ra y$ and $k : y \ra z$ and consider $kh$.
   \begin{center}
@@ -101,5 +102,12 @@
 
     \item[(ii)] A similar argument as above shows that $C/c$ is a category. ///
   \end{itemize}
+
+
+  \subsection*{Section 2}
+  \exercise{1.2.ii}
+  Let $f : x \hookrightarrow y$ and $g : y \hookrightarrow z$ be monomorphisms and $h,k : w \ra x$ be morphisms such that $gfh = gfk$. Because $g$ is monic, it follows that $fh = fk$. Similarly, because $f$ is monic we have $h = k$. Hence $gf$ is monic. 
+
+  Now suppose $f$ and $g$ are simply morphisms and that $gf$ is monic. BWOC suppose that $f$ is not monic. Then there exists morphisms $h,k$ such that $fh = fk$ but $h \ne k$. 
 
 \end{document}
