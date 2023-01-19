@@ -5,6 +5,7 @@
 \usepackage{mathtools}
 \usepackage{parskip}
 \usepackage{fancyhdr}
+\usepackage{tikz-cd}
 \usepackage{geometry}
 \geometry{
   a4paper,
@@ -83,6 +84,22 @@
   \end{itemize}
 
   \exercise{2}
-  Consider a category $C$ and the subset of isomorphisms it contains. The subset contains the identity morphisms for each object because the identity is an isomorphism. The subset inherits associativity from $C$. Now pick two morphisms $f : x \ra y$ and $g : y \ra z$ and consider $gf$. Because $f$ and $g$ are isomorphisms, $f^{-1}$ and $g^{-1}$ exist and are isomorphisms so are also in the set. Hence 
+  Consider a category $C$ and the subset of isomorphisms it contains. The subset contains the identity morphisms for each object because the identity is an isomorphism. The subset inherits associativity from $C$. Now pick two isomorphisms $f : x \ra y$ and $g : y \ra z$ and consider $gf$. We have $(f^{-1}g^{-1})gf = f^{-1}g^{-1}gf = f^{-1}f = \id_x$ and $gf(f^{-1}g^{-1}) = \id_y$ so $gf$ is also an isomorphism. Hence $C$ contains a maximal groupoid. ///
+  
+
+  \exercise{3}
+  \begin{itemize}
+    \item[(i)] Observe that for any object $f : c \ra x$ in $c/C$, the morphism $\id_x : x \ra x$ is the identity morphism for $f$. Now pick two morphisms in $c/C$, $h : x \ra y$ and $k : y \ra z$ and consider $kh$.
+  \begin{center}
+    \begin{tikzcd}
+      & c \arrow[ld, "f"'] \arrow[d, "g" description] \arrow[rd, "b"] &   \\
+      x \arrow[r, "h"] & y \arrow[r, "k"] & z
+    \end{tikzcd}
+  \end{center}
+
+  Because $hf = g$ and $kg = b$ we have $khf = b$ so $kh$ is a morphism in $c/C$ which is enough to show it is a category. ///
+
+    \item[(ii)] A similar argument as above shows that $C/c$ is a category. ///
+  \end{itemize}
 
 \end{document}
