@@ -64,8 +64,6 @@
 \rfoot{Category Theory}
 
 \begin{document}
-
-  \section*{Chapter 1}
   \subsection*{Section 1}
   \exercise{1.1.i} 
   \begin{itemize}
@@ -106,8 +104,20 @@
 
   \subsection*{Section 2}
   \exercise{1.2.ii}
+  \begin{itemize}
+    \item[(i)] $(\implies)$ Suppose $f : x \ra y$ is a split epimorphism. Now pick a morphism $h$ in $C(c,y)$. We may write 
+  \end{itemize}
+
+
+  \exercise{1.2.iii}
   Let $f : x \hookrightarrow y$ and $g : y \hookrightarrow z$ be monomorphisms and $h,k : w \ra x$ be morphisms such that $gfh = gfk$. Because $g$ is monic, it follows that $fh = fk$. Similarly, because $f$ is monic we have $h = k$. Hence $gf$ is monic. 
 
-  Now suppose $f$ and $g$ are simply morphisms and that $gf$ is monic. BWOC suppose that $f$ is not monic. Then there exists morphisms $h,k$ such that $fh = fk$ but $h \ne k$. 
+  Now suppose $f$ and $g$ are simply morphisms and that $gf$ is monic. BWOC suppose that $f$ is not monic. Then there exist morphisms $h,k$ such that $fh = fk$ but $h \ne k$. Hence we have $gfh = gfk$ this is a contradiction because $gf$ being monic implies that $h = k$. Hence $f$ is monic. 
+
+  Now observe that the monomorphisms in a category form a subcategory. Every object has an identity morphism because the identity is monic. Associativity is inherited from the larger category and composition is preserved because the composition of two monomorphisms is also a monomorphisms as shown above.
+
+  By duality the epimorphisms also form a subcategory. ///
+
+  \exercise{1.2.v} Consider the inclusion map $i : \Z \hookrightarrow \Q$. Now pick two morphisms in $\text{Ring}$, $f,g : \R \rightrightarrows \Z$ such that $if = ig$. 
 
 \end{document}
