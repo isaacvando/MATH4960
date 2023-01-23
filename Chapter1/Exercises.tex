@@ -104,10 +104,10 @@
 
 
   \subsection*{Section 2}
-  \exercise{1.2.ii}
-  \begin{itemize}
-    \item[(i)] $(\implies)$ Suppose $f : x \ra y$ is a split epimorphism. Now pick a morphism $h$ in $C(c,y)$. We may write 
-  \end{itemize}
+  % \exercise{1.2.ii}
+  % \begin{itemize}
+  %   \item[(i)] $(\implies)$ Suppose $f : x \ra y$ is a split epimorphism. Now pick a morphism $h$ in $C(c,y)$. We may write 
+  % \end{itemize}
 
 
   \exercise{1.2.iii}
@@ -119,11 +119,17 @@
 
   By duality the epimorphisms also form a subcategory. ///
 
+  \exercise{1.2.iv} Q: What are the monomorphisms in \cat{Field}. Haven't been able to crack this one yet. 
+
   \exercise{1.2.v} In \cat{Ring}, consider the inclusion map $i : \Z \hookrightarrow \Q$. Now pick two morphisms, $f,g : R \rightrightarrows \Z$ such that $if = ig$ where $R$ is some ring. Now BWOC suppose that $f \ne g$. Then there exists an $r \in R$ such that $f(r) \ne g(r)$. Hence $i(f(r)) \ne i(g(r))$ so $if \ne ig$ which is a contradiction. Hence the above implies that $f = g$ so $i$ is monic. 
 
   Now pick morphisms $h,k : \Q \rightrightarrows R$ such that $hi = ki$. This means that for all integers $z$, $h(z) = k(z)$. Each rational $q$ may be written canonically as $nd^{-1}$ for $n, d \in \Z$. Hence $h(q) = h(nd^{-1}) = h(n)h(d^{-1})$. Further, because every element in $\Q$ is a unit, $h(n)h(d^{-1}) = h(n)h(d)^{-1}$. Because $h$ and $k$ agree on the integers, we have $h(n)h(d)^{-1} = k(n)k(d)^{-1}$. Hence $h = k$ and $i$ is an epimorphism. 
 
   $\Q$ and $\Z$ are not isomorphic in \cat{Ring} because $\Q$ is a field while $\Z$ is not. Hence in \cat{Ring}, monic and epic does not imply isomorphism. /// 
+
+  \exercise{1.2.vii} For a given subset of objects $A \subseteq P$, consider $M_A = \{ x \in \mathrm{obj}P | \forall a \in A, \exists f \in P(a,x) \}$, i.e. the set of all elements in $P$ targeted by a morphism from every element in $A$. If it exists (when could it not exist?), the supremum of $A$ is the least element in $M_A$ w.r.t. $\le$. 
+
+  By duality...
 
 
 \end{document}
