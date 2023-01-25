@@ -7,6 +7,10 @@
 \usepackage{fancyhdr}
 \usepackage{tikz-cd}
 \usepackage{geometry}
+\usepackage[normalem]{ulem}
+\newcommand\hl{\bgroup\markoverwith
+    {\textcolor{yellow}{\rule[-.5ex]{.1pt}{2.5ex}}}\ULon}
+
 \geometry{
   a4paper,
   left= 1in,
@@ -14,6 +18,7 @@
   top=1.42in,
 }
 \pagestyle{fancy}
+
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \newcommand{\N}{\mathbb{N}}
@@ -48,7 +53,8 @@
 \newcommand{\tors}{M_{\text{tors}}}
 \newcommand{\ann}[2][R]{\text{Ann}_{#1}(#2)}
 \newcommand{\kx}{K[x]}
-\newcommand{\cat}[1]{\upshape{\sffamily\textbf{#1}}}
+\newcommand{\cat}[1]{\upshape{\sffamily{#1}}}
+\newcommand{\commaArrow}{\!\downarrow\!}
 
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
 \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
@@ -130,6 +136,33 @@
   \exercise{1.2.vii} For a given subset of objects $A \subseteq P$, consider $M_A = \{ x \in \mathrm{obj}P | \forall a \in A, \exists f \in P(a,x) \}$, i.e. the set of all elements in $P$ targeted by a morphism from every element in $A$. If it exists (when could it not exist?), the supremum of $A$ is the least element in $M_A$ w.r.t. $\le$. 
 
   By duality...
+
+
+
+  \subsection*{Section 3}
+  \exercise{1.3.i} Given two groups $G$ and $H$, a functor $\mathrm{B}G \ra \mathrm{B}H$ is a group homomorphism. Given such a functor $F$, and elements $x,y \in G$, that is morphisms in $\mathrm{B}G$, we have $F(x)F(y) = F(xy)$ which is exactly a group homomorphism. ///
+  
+  % Given two groups $G$ and $H$, a functor $\mathrm{B}G \ra \mathrm{B}H$ takes the object in $\mathrm{B}G$ to the object in $\mathrm{B}H$, the identity morphism to the identity morphism, and each other morphism in $\mathrm{B}G$ to a morhpism in $\mathrm{B}H$. (What is this question asking?)
+
+
+  \exercise{1.3.iv} First observe that $C(c,-)$ and $C(-,c)$ both preserve identities. Consider the action of $C(c,-)$ on $\id_x : x \ra x$. $\id_x$ maps to post composition by the identity on $C(c,x)$ which is the identity morphism for $C(c,x)$. Similar reason applies for $C(-,c)$. 
+
+  Now pick two morphisms $f:x \ra y$ and $g:y \ra z$ in $C$. Then $C(c,-)g \cdot C(c,-)f = g_*f_* = (gf)_* = C(c,-)(gf)$. Hence $C(c,-)$ is in fact a functor. A similar argument shows the same holds for $C(-,c)$. 
+
+  \hl{Is this by duality?} ///
+
+  \exercise{1.3.viii} Consider the trivial Functor $\mathbf{0} : \mathrm{Set} \ra \mathrm{Set}$ that maps every set to $\emptyset$ and every morphism to $\id_\emptyset$. Observe that this is indeed a functor because $\mathbf{0}(\id_x) = \id_{\mathbf 0 x} = \id_\emptyset$ and $\mathbf 0 (gf) = \mathbf 0 (g) \mathbf 0 (f) = \id_\emptyset$. Now pick any morphism in Set that is not an isomorphism. It is mapped to $\id_\emptyset$ which is an isomorphism. Hence functors do not reflect isomorphisms. ///
+
+  \exercise{1.3.vi} Consider the map $\mathrm{dom} : F \commaArrow G \ra D$ that takes an object $(d,e,f) \mapsto d$ and a morphism $(h,k) \mapsto h$. Now pick an identity morphism $(\id_d, \id_e)$; clearly this functor preserves identity. Now pick a composable pair of morphisms $(h,k)$ and $(h',k')$. We have $\mathrm{dom} ((h',k')(h,k))= \mathrm{dom}(h'h,k'k) = h'h = \mathrm{dom}(h',k')\mathrm{dom}(h,k)$. Hence $\mathrm{dom}$ is a functor. Define $\mathrm{cod}$ analagously. /// (Is this right?)
+
+
+  \exercise{1.3.x} Consider the mapping $\mathrm{Conj} : \mathrm{Group} \ra \mathrm{Set}$ that takes a group to the set of its conjugacy classes and a homomorphism to mapping between the
+  \begin{align*}
+    \mathrm{Conj} : \mathrm{Group} &\longrightarrow \mathrm{Set} \\
+    G &\longmapsto \text{Conj}(G) \\
+    (f : G \ra H) &\longmapsto (f': \mathrm{Conj}(G) \ra \mathrm{Conj}(H))
+  \end{align*}
+  Where $f'$ maps a conjugacy class containing an element $x$ to the class in $H$ containing $f(x)$ (need to show this is well defined) 
 
 
 \end{document}
