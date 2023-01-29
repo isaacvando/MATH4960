@@ -175,4 +175,17 @@
 
   Now pick a pair of groups such that the cardinalities of their sets of conjugacy classes differ. \hl{(How do I conclude that they are not isomorphic?)}.
 
+
+  \subsection*{Section 1.4}
+
+  \exercise{1.4.i} Consider the inverse of a component of the natural isomorphism $\alpha : F \Rightarrow G$ such as $\alpha^{-1}_c : Gc \ra Fc$. It remains to show that the following diagram commutes: 
+  \begin{center}
+    \begin{tikzcd}
+      Gc \arrow[d, "G\phi"'] \arrow[r, "\alpha_c^{-1}"] & Fc \arrow[d, "F\phi"] \\
+      Gc' \arrow[r, "\alpha_{c'}^{-1}"]& Fc'
+    \end{tikzcd}
+  \end{center}
+
+  By the naturality of $\alpha$ we have that $G\phi \cdot \alpha_c = \alpha_{c'} \cdot F\phi$. Hence by composing each side with $\alpha_c^{-1}$ and $\alpha_{c'}^{-1}$ we get $\alpha_{c'}^{-1} \cdot G\phi = F\phi \cdot \alpha_{c}^{-1}$. Hence $\alpha^{-1} : G \Rightarrow F$ is a natural isomorphism. ///
+
 \end{document}
