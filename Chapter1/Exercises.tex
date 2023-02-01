@@ -57,6 +57,8 @@
 \newcommand{\commaArrow}{\!\downarrow\!}
 \newcommand{\oper}{\operatorname}
 \newcommand{\op}{\mathrm{op}}
+\newcommand{\obj}{\mathrm{obj}}
+\newcommand{\mor}{\mathrm{mor}}
 
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
 \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
@@ -127,17 +129,19 @@
 
   By duality the epimorphisms also form a subcategory. ///
 
-  \exercise{1.2.iv} \hl{Question: What are the monomorphisms in \cat{Field}?}
+  \exercise{1.2.iv} Recall that the only ideals in a field $F$ are $\{0\}$ and $F$. Pick a morphism $f : X \ra Y$ in \cat{Field}. The kernel of $f$ is an ideal so it is either $\{0\}$ or $X$. By the first isomorphism theorem, $f$ is either 1-1 or the 0 map. Now pick $g,h$ such that $fg = fh$. Then because $f$ is 1-1, then it maps every element of it's domain to a unique element in the codomain hence $h = g$. There for $f$ is monic. Hence the monomorphisms in \cat{Field} are the non-zero maps. ///
 
-  \exercise{1.2.v} In \cat{Ring}, consider the inclusion map $i : \Z \hookrightarrow \Q$. Now pick two morphisms, $f,g : R \rightrightarrows \Z$ such that $if = ig$ where $R$ is some ring. Now BWOC suppose that $f \ne g$. Then there exists an $r \in R$ such that $f(r) \ne g(r)$. Hence $i(f(r)) \ne i(g(r))$ so $if \ne ig$ which is a contradiction. Hence the above implies that $f = g$ so $i$ is monic. 
+  *\exercise{1.2.v} In \cat{Ring}, consider the inclusion map $i : \Z \hookrightarrow \Q$. Now pick two morphisms, $f,g : R \rightrightarrows \Z$ such that $if = ig$ where $R$ is some ring. Now BWOC suppose that $f \ne g$. Then there exists an $r \in R$ such that $f(r) \ne g(r)$. Hence $i(f(r)) \ne i(g(r))$ so $if \ne ig$ which is a contradiction. Hence the above implies that $f = g$ so $i$ is monic. 
 
   Now pick morphisms $h,k : \Q \rightrightarrows R$ such that $hi = ki$. This means that for all integers $z$, $h(z) = k(z)$. Each rational $q$ may be written canonically as $nd^{-1}$ for $n, d \in \Z$. Hence $h(q) = h(nd^{-1}) = h(n)h(d^{-1})$. Further, because every element in $\Q$ is a unit, $h(n)h(d^{-1}) = h(n)h(d)^{-1}$. Because $h$ and $k$ agree on the integers, we have $h(n)h(d)^{-1} = k(n)k(d)^{-1}$. Hence $h = k$ and $i$ is an epimorphism. 
 
   $\Q$ and $\Z$ are not isomorphic in \cat{Ring} because $\Q$ is a field while $\Z$ is not. Hence in \cat{Ring}, monic and epic does not imply isomorphism. /// 
 
-  \exercise{1.2.vii} For a given subset of objects $A \subseteq P$, consider $M_A = \{ x \in \mathrm{obj}P | \forall a \in A, \exists f \in P(a,x) \}$, i.e. the set of all elements in $P$ targeted by a morphism from every element in $A$. If it exists \hl{(when could the supremum not exist?)}, the supremum of $A$ is the least element in $M_A$ w.r.t. $\le$. 
+  \exercise{1.2.vii} For a given subset of objects $A \subseteq P$, consider $M_A = \{ x \in \mathrm{obj}P | \forall a \in A, \exists f \in P(a,x) \}$, i.e. the set of all elements in $P$ targeted by a morphism from every element in $A$. If it exists, the supremum of $A$ is the least element in $M_A$ w.r.t. $\le$. 
 
-  By duality...
+  We define the infimum by duality as the greatest element in $m_A = \{ x \in \mathrm{obj}P | \forall a \in A, \exists f \in P(x,a) \}$.
+
+  Now suppose we have $p,q$ both suprema of $A$. Then by definition $p \le q$ and $q \le p$ because each is a member of $A$. Hence by the antireflexivity of $\le$, we have $p = q$. The dual proof shows uniquens for the infimum. ///
 
 
 
@@ -147,7 +151,11 @@
   % Given two groups $G$ and $H$, a functor $\mathrm{B}G \ra \mathrm{B}H$ takes the object in $\mathrm{B}G$ to the object in $\mathrm{B}H$, the identity morphism to the identity morphism, and each other morphism in $\mathrm{B}G$ to a morhpism in $\mathrm{B}H$. (What is this question asking?)
 
 
-  \exercise{1.3.iii} \hl{Question: Give an example of a functor such that its image is not a subcategory of the codomain.}
+  \exercise{1.3.iii} Pick a category $C$ where $\obj C = \{a,b,b',c\}$ and $|\obj C| = 4$ such that the only morphisms inlcuded beyond the identities are $f : a \ra b$ and $g: b' \ra c$. 
+
+  Now define a functor $F : C \ra D$ for some category $D$ where $\obj D = \{Fa, Fb = Fb', Fc\}$ and $|\obj D| = 3$. Let $F$ preserve identities and $Ff : Fa \ra Fb$ and $Fg : Fb \ra Fc$. Observe that this is in fact a functor because it preserves identities and there are no nontrivial compositions in $C$. 
+
+  Because $Fg \circ Ff$ is a morphism in $D$, but is not in the image of $F$, the image of $F$ is not a sub category. ///
 
 
   \exercise{1.3.iv} First observe that $C(c,-)$ and $C(-,c)$ both preserve identities. Consider the action of $C(c,-)$ on $\id_x : x \ra x$. $\id_x$ maps to post composition by the identity on $C(c,x)$ which is the identity morphism for $C(c,x)$. Similar reason applies for $C(-,c)$. 
@@ -171,7 +179,7 @@
 
   Observe that $\oper{Conj}$ preserves identities. Now pick $h : G \ra H$ and $k : H \ra I$. Then $\oper{Conj}(kh) = f' : \oper{Cl}(G) \ra \oper{Cl}(I) = \oper{Conj}(k)\oper{Conj}(h)$. Hence $\oper{Conj}$ is a functor. 
 
-  Now pick a pair of groups such that the cardinalities of their sets of conjugacy classes differ. \hl{(How do I conclude that they are not isomorphic?)}.
+  Now pick a pair of groups such that the cardinalities of their sets of conjugacy classes differ. If there was an isomorphism between the two groups, say $k : G \ra H$, then $\mathrm{Conj} k : \mathrm{Cl}(G) \ra \mathrm{Cl}(H)$ would be an isomorphism as well. But this cannot be because there are no isomorphisms between sets with different cardinalities. ///
 
 
   \subsection*{Section 1.4}
@@ -194,6 +202,5 @@
   \exercise{1.4.vi} The components of a natural transformation are defined to be morphisms in the shared target category of two functors. Hence the definition of natural (or extranatural) transormation does not allow for different target categories because the same notion of morphism does not apply. ///
 
   \hl{Questions:} Why is $A$ included in the definition extrantural transformation? Why not just $B$ and $B^\op$? \\
-  Are there notions of morphisms between objects in different categories? (Not functors, but a morphism from an object $x \in C$ to an object $y \in D$).
-
+  Are there notions of morphism between objects in different categories? (Not functors, but a morphism from an object $x \in C$ to an object $y \in D$).
 \end{document}
