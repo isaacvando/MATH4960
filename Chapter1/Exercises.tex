@@ -216,8 +216,6 @@
   
   Let $\mathcal{H}$ be the set of all functors $ C \times \mathbf{2} \ra D$ that restrict along $i_0$ and $i_1$ to $F$ and $G$ and $\mathcal{A}$ be the set of natural transformations from $F$ to $G$. Observe then that applying $H$ defines a function $\mathcal{F} : \mathcal{H} \ra \mathcal{A}$.
 
-  % Further, this mapping is injective because for any $H,K \in \mathcal{H}$, $\mathcal{F}(H) = \mathcal{F}(K)$ implies that all the components are the same
-
   We may now define $\mathcal{F}^{-1}$. For any $\alpha : F \Rightarrow G$, map the component $\alpha_x$ to $(\id_x,\phi)$. This is enough to define a particular functor in $\mathcal{H}$ as the other mappings are constrained by $F$ and $G$. 
 
   Hence $\mathcal{H} \cong \mathcal{A}$. ///
@@ -227,12 +225,19 @@
 
 
   \exercise{1.5.iv}
+  \begin{itemize}
+    \item[(i)] Because $F$ is fully faithful, $C(y,x) \cong D(Fy,Fx)$. Hence $(Ff)^{-1}$ has a preimage in $C$, say $g$. Thus $Ff \circ Fg = \id_y = F(fg) =  F\id_y$. Hence $fg = \id_y$. Similar reasoning shows that $gf = \id_x$. Therefore $f$ is an isomorphism. ///
+    
+    \item[(ii)] Because $F$ is fully faithful, we know that for any $x,y \in C$, $C(x,y) \cong D(Fx,Fy)$. There is at least one morphism in $D(Fx,Fy)$, namely the isomorphism $Ff$. Thus there is a morphism $f \in C(x,y)$. Now apply (i) to see that $f$ is an isomorphism so $x \cong y$. ///
+    
+    % $\phi : Fx \ra Fy$. Call the preimage of that morphism $f$ in $C$. By similar reasoning, there is a morphism $g \in C$ that is the preimage of $\phi^{-1}$. $\phi \circ \phi^{-1} = Ff\circ Fg = \id_{F_y} = F(fg) = F\id_y$ by functoriality. Hence $fg = \id_y$. Similar reasoning shows that $gf = \id_x$. Therefore $x \cong y$. ///
+  \end{itemize}
 
 
   \exercise{1.5.ix} Theorem 1.5.9 says that a functor defining an equivalence of categories is fully faithful. Hence, for a category to be equivalent to a locally small category, the hom sets of each category must be isomorphic. Sets are only isomorphic to other sets; therefore the equivalent category is also locally small. ///
 
   \exercise{1.5.xi}
-  Consider the inclusion $\text{Ab} \ra \text{Group}$. It is fully faithful because the hom sets between abelian groups are the same in each category. It is not essentially surjective because nonabelian groups are not isomorphic to abelian groups. 
+  Consider the inclusion $\text{Ab} \ra \text{Group}$. It is fully faithful because the hom sets between abelian groups are the same in each category. It is not essentially surjective because nonabelian groups are not isomorphic to abelian groups. ///
 
-  Consider $\text{Field} \ra \text{Ring}$.
+  % Consider $\text{Field} \ra \text{Ring}$.
 \end{document}
