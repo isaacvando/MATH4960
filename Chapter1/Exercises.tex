@@ -199,8 +199,25 @@
 
   \exercise{1.4.iv} Observe that $f$ and $g$ define the same natural transformation exactly when their components are equal. The naturality condition for $f_*$ is that $h^*f_* = f_*h^*$ and for $g_*$ it is $h^*g_* = f_*g^*$. Hence because $f$ and $g$ are distinct morphisms, we do not have $h^*f_* = h^*g_*$, for example if $h^*$ is the identity. ///
 
-  \exercise{1.4.vi} The components of a natural transformation are defined to be morphisms in the shared target category of two functors. Hence the definition of natural (or extranatural) transormation does not allow for different target categories because the same notion of morphism does not apply. ///
+  \exercise{1.4.vi} The components of a natural transformation are defined to be morphisms in the shared target category of two functors. Hence the definition of natural (or extranatural) transformation does not allow for different target categories because the same notion of morphism does not apply. ///
 
   % \hl{Questions:} Why is $A$ included in the definition extrantural transformation? Why not just $B$ and $B^\op$? \\
   % Are there notions of morphism between objects in different categories? (Not functors, but a morphism from an object $x \in C$ to an object $y \in D$).
+
+  \subsection*{Section 1.5}
+  \exercise{1.5.i} Let $\phi : 0 \ra 1$ be the single nonidentity morphism in $\mathbf{2}$. Then consider the category $C \times \mathbf{2}$ and pick a morphism $f : x \ra y$ in $C$. We have
+  \begin{center}
+  \begin{tikzcd}
+    (x,0) \arrow[r, "(\id_x{,}\phi)"] \arrow[d, "(f{,}\id_0)"'] \arrow[dr, "(f{,}\phi)" description] & (x,1) \arrow[d, "(f{,}\id_1)"] \\
+    (y,0) \arrow[r, "(\id_y{,}\phi)"'] & (y,1)
+  \end{tikzcd} 
+  \end{center}
+  A quick check shows that this diagram commutes. Now apply $H$ to $C \times \mathbf{2}$. Observe that because $F = Hi_0$, we have $H(f,\id_0) = Ff$. Similarly for $G$, we have $H(f,\id_1) = Gf$. Now because $H$ is itself a single functor, it preserves compositions of morphisms. Hence the above square is lifted to $D$ where it forms a naturality square for $f$ for some natural transformation where $H(\id_x, \phi)$ and $H(\id_y,\phi)$ are the components. 
+  
+  Let $\mathcal{H}$ be the set of all functors $ C \times \mathbf{2} \ra D$ that restrict along $i_0$ and $i_1$ to $F$ and $G$ and $\mathcal{A}$ be the set of natural transformations from $F$ to $G$. Observe then that applying $H$ defines a function $\mathcal{F} : \mathcal{H} \ra \mathcal{A}$.
+
+  Further, this mapping is injective because for any $H,K \in \mathcal{H}$, $\mathcal{F}(H) = \mathcal{F}(K)$ implies that all the components are the same
+
+
+  \exercise{1.5.iii} Let the two ismorphisms be $g : a \ra a'$ and $h : b \ra b'$ and let the leftmost diagram define $f'$. Then $f' = hfg^{-1}$. Hence the second diagram commutes because $f'g = hf$, the third because $h^{-1}f' = fg^{-1}$, and the fourth because $h^{-1}f'g = f$. ///
 \end{document}
