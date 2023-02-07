@@ -216,7 +216,11 @@
   
   Let $\mathcal{H}$ be the set of all functors $ C \times \mathbf{2} \ra D$ that restrict along $i_0$ and $i_1$ to $F$ and $G$ and $\mathcal{A}$ be the set of natural transformations from $F$ to $G$. Observe then that applying $H$ defines a function $\mathcal{F} : \mathcal{H} \ra \mathcal{A}$.
 
-  Further, this mapping is injective because for any $H,K \in \mathcal{H}$, $\mathcal{F}(H) = \mathcal{F}(K)$ implies that all the components are the same
+  % Further, this mapping is injective because for any $H,K \in \mathcal{H}$, $\mathcal{F}(H) = \mathcal{F}(K)$ implies that all the components are the same
+
+  We may now define $\mathcal{F}^{-1}$. For any $\alpha : F \Rightarrow G$, map the component $\alpha_x$ to $(\id_x,\phi)$. This is enough to define a particular functor in $\mathcal{H}$ as the other mappings are constrained by $F$ and $G$. 
+
+  Hence $\mathcal{H} \cong \mathcal{A}$. ///
 
 
   \exercise{1.5.iii} Let the two ismorphisms be $g : a \ra a'$ and $h : b \ra b'$ and let the leftmost diagram define $f'$. Then $f' = hfg^{-1}$. Hence the second diagram commutes because $f'g = hf$, the third because $h^{-1}f' = fg^{-1}$, and the fourth because $h^{-1}f'g = f$. ///
