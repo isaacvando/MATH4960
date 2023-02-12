@@ -1,2 +1,5 @@
 functoriality
 surjective
+epimorphism
+doubleton
+monomorphism

@@ -182,7 +182,7 @@
   Now pick a pair of groups such that the cardinalities of their sets of conjugacy classes differ. If there was an isomorphism between the two groups, say $k : G \ra H$, then $\mathrm{Conj} k : \mathrm{Cl}(G) \ra \mathrm{Cl}(H)$ would be an isomorphism as well. But this cannot be because there are no isomorphisms between sets with different cardinalities. ///
 
 
-  \subsection*{Section 1.4}
+  \subsection*{Section 4}
 
   \exercise{1.4.i} Consider the inverse of a component of the natural isomorphism $\alpha : F \Rightarrow G$ such as $\alpha^{-1}_c : Gc \ra Fc$. It remains to show that the following diagram commutes: 
   \begin{center}
@@ -204,7 +204,7 @@
   % \hl{Questions:} Why is $A$ included in the definition extrantural transformation? Why not just $B$ and $B^\op$? \\
   % Are there notions of morphism between objects in different categories? (Not functors, but a morphism from an object $x \in C$ to an object $y \in D$).
 
-  \subsection*{Section 1.5}
+  \subsection*{Section 5}
   \exercise{1.5.i} Let $\phi : 0 \ra 1$ be the single nonidentity morphism in $\mathbf{2}$. Then consider the category $C \times \mathbf{2}$ and pick a morphism $f : x \ra y$ in $C$. We have
   \begin{center}
   \begin{tikzcd}
@@ -240,4 +240,15 @@
   Consider the inclusion $\text{Ab} \ra \text{Group}$. It is fully faithful because the hom sets between abelian groups are the same in each category. It is not essentially surjective because nonabelian groups are not isomorphic to abelian groups. ///
 
   % Consider $\text{Field} \ra \text{Ring}$.
+
+  \subsection*{Section 6}
+  \exercise{1.6.i} Let $i$ and $t$ be initial and terminal in $C$ respectively and suppose there is a morphism $f : t \ra i$. Because $i$ and $t$ are terminal and initial, there is a unique morphism $g : i \ra t$. Now observe that $fg = \id_i$ and $gf = \id_t$ because there is a unique morphism $i \ra i$ and a unique morphism $t \ra t$ which must then each be the identity. Thus $t \cong i$. ///
+
+  \exercise{1.6.ii}
+  Let $p$ and $q$ be terminal objects. Then there are unique morphism $p \ra q$ and $q \ra p$. Because the only morphisms $p \ra p$ and $q \ra q$ are the identities, $pq$ and $qp$ are the identities so $p \cong q$ uniquely. ///
+
+  \exercise{1.6.v} Consider the concrete category $(\mathbf{2},U)$ where $\mathbf{2}$ is the category containing a single morphism $0 \ra 1$ and where $U : \mathbf{2} \ra \textbf{Set}$ takes 0 to a singleton set, 1 to a doubleton set, and the morphism to some morphism $U0 \ra U1$. Observe that the morphism in \textbf{2} is a monomorphism but its underlying function is not injective because there are no injections between finite sets of different cardinalities.
+  
+  As we saw in a previous exercise, the inclusion $\Z \hookrightarrow \Q$ in the category of Rings is an epimorphism but the underlying function is not a surjection. ///
+
 \end{document}
