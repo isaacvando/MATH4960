@@ -4,3 +4,4 @@ epimorphism
 doubleton
 monomorphism
 surjection
+monoid
