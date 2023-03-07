@@ -282,6 +282,37 @@
   % This map is injective because $\alpha$ is uniquely determined by its components. 
 
 
-  \exercise{1.7.v} Define the monoid operation to be horizontal composition of natural transformations $\mathbf{1}_C \Rightarrow \mathbf{1}_C$. The identity natural transformation serves as the identity. Further, this operation is associative because the composition of components is associative. 
+
+  \exercise{1.7.ii} Observe that the following diagram commutes as it is the diagram defining horizontal composition:
+  \begin{center}
+    \begin{tikzcd}
+      H(Fc) & K(Fc)
+    \end{tikzcd}
+  \end{center}
+  Hence by funtoriality of $L$,
+  \begin{align*}
+    L(\beta_{Fc'} \circ HFf) &= L(KFf \circ \beta_{Fc}) \\
+    L(\beta_{Fc'})L(HFf) &= L(KFf)L(\beta_{Fc})
+  \end{align*}
+  so the diagram commutes and $L\beta F$ is natural.
+
+
+
+  \exercise{1.7.v} Define the monoid operation to be vertical composition of natural transformations $\mathbf{1}_C \Rightarrow \mathbf{1}_C$. The identity natural transformation serves as the identity. Further, this operation is associative because the composition of components is associative. 
+
+
+  \exercise{1.7.vii} For each $c \in C$, $F(c,-)$ inherits functoriality from $F$, hence $F$ determines a functor for each $c$. 
+  $F$ also determines a natural transformation $F(f,-) : F(c,-) \Rightarrow F(c',-)$ as follows. For some morphism $g : x \ra y$ in $D$, we have
+  \begin{center}
+    \begin{tikzcd}
+      F(c,x) \arrow[r, "F(f{,}x)"] \arrow[d, "F(c{,}g)"] & F(c',x) \arrow[d, "F(c'{,}g)"] \\
+      F(c,y) \arrow[r, "F(f{,}y)"]  & F(c',y)
+    \end{tikzcd}
+  \end{center}
+  The square commutes because $f$ and $g$ each act independently on the left and right components respectively. 
+
+
+  Now, for each $c \in C$, pick a functor $K_c : D \ra E$. Then we may define $F : C \times D \ra E$ for objects as $(c,d) \mapsto K_c(d)$. For a morphism $(f,g) : (c,d) \ra (c',d')$, define $F(f,g)$ as $(f,g) \mapsto K_c(g)$ -- not quite. This is where the natural transformation comes in to play
+
 
 \end{document}
