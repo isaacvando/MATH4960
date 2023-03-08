@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{tikz-cd}
+\usepackage{geometry}
+\usepackage[normalem]{ulem}
+\newcommand\hl{\bgroup\markoverwith
+    {\textcolor{yellow}{\rule[-.5ex]{.1pt}{2.5ex}}}\ULon}
+
+\geometry{
+  a4paper,
+  left= 1in,
+  right= 1in,
+  top=1.42in,
+}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\ER}{\mathcal{R}}
+\newcommand{\im}{\text{im}}
+\newcommand{\id}{\text{id}}
+\renewcommand{\char}{\text{char}}
+\newcommand{\coker}{\text{coker}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{row}}
+\newcommand{\col}{\text{col}}
+\newcommand{\nul}{\text{nul}}
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\exercise}[1]{\fbox{\textbf{Exercise #1}}}
+\newcommand{\bitem}[1]{\item[\textbf{#1}]}
+\newcommand{\nxn}{M_{n \times n}(K)}
+\newcommand{\adj}{\text{adj}}
+\newcommand{\Mult}{\text{Mult}_K(V^m, W)}
+\newcommand{\Alt}{\text{Alt}_K(V^m, W)}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\amult}{\text{a-Mult}}
+\newcommand{\gmult}{\text{g-Mult}}
+\renewcommand{\null}{\text{null}}
+\newcommand{\Min}{\text{Min}}
+\newcommand{\End}{\text{End}}
+\newcommand{\tors}{M_{\text{tors}}}
+\newcommand{\ann}[2][R]{\text{Ann}_{#1}(#2)}
+\newcommand{\kx}{K[x]}
+\newcommand{\cat}[1]{\upshape{\sffamily{#1}}}
+\newcommand{\commaArrow}{\!\downarrow\!}
+\newcommand{\oper}{\operatorname}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\obj}{\mathrm{obj}}
+\newcommand{\mor}{\mathrm{mor}}
+\renewcommand{\P}{\mathcal{P}}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+% \littletaller % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+\lhead{Isaac Van Doren}
+\chead{Chapter 1}
+\rhead{\today}
+\lfoot{}
+\rfoot{Category Theory}
+
+\begin{document}
+
+  \subsection*{Section 7}
+  \exercise{1.7.i} Let $F,G : C \rightrightarrows D$ be functors. Observe that for any $c \in C$, $D(Fc, Gc)$ is a set because $D$ is locally small. Now consider 
+    $$A = \bigcup_{c \in C} D(Fc,Gc)$$
+  $A$ is a set because it is a union of sets indexed by another set. 
+  
+  Now, every natural transformation is uniquely defined by its components. Each component is a map $\alpha_c : Fc \ra Gc$ for some $c$. Hence, each natural transformation corresponds to an element in $\P(A)$ that contains all of its components. 
+
+  Thus the collection of natural transformations between $F,G$ is a set because it is in bijection with a subset of $\P(A)$ which is a set.
+  
+  Hence There are set-many morphisms between any two objects in $D^C$ so it is locally small. ///
+  
+  
+  % Let $F,G : C \rightrightarrows D$ be functors and $\alpha : F \Rightarrow G$ be a natural transformation. Every component of $\alpha$ is defined by at least one morphism in $C$. Hence because there are set-many morphisms in $C$, the collection of components of $\alpha$ is a set. 
+
+
+
+  % The collection of natural transformations is a set because...
+  
+  % Thus, because $\alpha$ is uniquely determined by its components, we may define a map from the set of natural transformations to the set of sets of components that takes a natural transformation $\alpha$ to its set of components. 
+
+  % This map is injective because $\alpha$ is uniquely determined by its components. 
+
+
+
+  \exercise{1.7.ii} The following diagram commutes because it is the commutativity diagram for $\beta$ for a morphism $Ff : Fc \ra Fc'$. 
+  \begin{center}
+    \begin{tikzcd}
+      H(Fc) \arrow[r, "\beta_{Fc}"] \arrow[d, "H(Ff)"] & K(Fc) \arrow[d, "K(Ff)"] \\
+      H(Fc') \arrow[r, "\beta_{Fc'}"] & K(Fc')
+    \end{tikzcd}
+  \end{center}
+
+  Hence we may apply $L$ to the common composite and by functoriality we have the following.
+  \begin{align*}
+    L(\beta_{Fc'} \circ HFf) &= L(KFf \circ \beta_{Fc}) \\
+    L(\beta_{Fc'})L(HFf) &= L(KFf)L(\beta_{Fc})
+  \end{align*}
+  Thus the diagram for $L\beta F$ commutes so it is natural. ///
+
+
+
+  \exercise{1.7.v} Define the monoid operation to be vertical composition of natural transformations $\mathbf{1}_C \Rightarrow \mathbf{1}_C$. The identity natural transformation serves as the identity. Further, this operation is associative because the composition of components is associative. 
+
+
+  \exercise{1.7.vii} For each $c \in C$, $F(c,-)$ inherits functoriality from $F$, hence $F$ determines a functor for each $c$. 
+  $F$ also determines a natural transformation $F(f,-) : F(c,-) \Rightarrow F(c',-)$ as follows. For some morphism $g : x \ra y$ in $D$, we have
+  \begin{center}
+    \begin{tikzcd}
+      F(c,x) \arrow[r, "F(f{,}x)"] \arrow[d, "F(c{,}g)"] & F(c',x) \arrow[d, "F(c'{,}g)"] \\
+      F(c,y) \arrow[r, "F(f{,}y)"]  & F(c',y)
+    \end{tikzcd}
+  \end{center}
+  The square commutes because $f$ and $g$ each act independently on the left and right components respectively. 
+
+
+  Now, for each $c \in C$, pick a functor $K_c : D \ra E$ and for each morphism $f : c \ra c'$, pick a natural transformation $\alpha : K_c \Rightarrow K_{c'}$. Then we may define $F : C \times D \ra E$ for objects as $(c,d) \mapsto K_c(d)$. For a morphism $(f,g) : (c,d) \ra (c',d')$, we need to construct a mapping $F(f,g) : F(c,d) \ra F(c',d')$. By the definition of $F$ on objects, this is $F(f,g) : K_c(d) \ra K_{c'}(d)$. Hence define $F(f,g) = K_{c'}(g)\circ\alpha_d$.
+
+  We have $F(\id_c, \id_d) = K_{c'}(\id_d) \circ \alpha_d = \id_{K_{c}(d)} \circ \id_{K_{c}(d)} = \id_{K_{c}(d)}$ by functoriality of $K_c$ and (I'm not sure this works because $\alpha_d$ need not be the identity)
+
+  \hl{how is the above equivalent to showing this? $\ra$} Hence there is a bijection between $C \times D \ra E$ and $C \ra E^D$. 
+
+
+\end{document}
