@@ -314,7 +314,7 @@
 
   Now, for each $c \in C$, pick a functor $K_c : D \ra E$ and for each morphism $f : c \ra c'$, pick a natural transformation $\alpha : K_c \Rightarrow K_{c'}$. Then we may define $F : C \times D \ra E$ for objects as $(c,d) \mapsto K_c(d)$. For a morphism $(f,g) : (c,d) \ra (c',d')$, we need to construct a mapping $F(f,g) : F(c,d) \ra F(c',d')$. By the definition of $F$ on objects, this is $F(f,g) : K_c(d) \ra K_{c'}(d)$. Hence define $F(f,g) = K_{c'}(g)\circ\alpha_d$.
 
-  Show that $F$ is a functor...
+  We have $F(\id_c, \id_d) = K_{c'}(\id_d) \circ \alpha_d = \id_{K_{c}(d)} \circ \id_{K_{c}(d)} = \id_{K_{c}(d)}$ by functoriality of $K_c$ and (I'm not sure this works because $\alpha_d$ need not be the identity)
 
   Hence there is a bijection between $C \times D \ra E$ and $C \ra E^D$. 
 
