@@ -283,18 +283,20 @@
 
 
 
-  \exercise{1.7.ii} Observe that the following diagram commutes as it is the diagram defining horizontal composition:
+  \exercise{1.7.ii} The following diagram commutes because it is the commutativity diagram for $\beta$ for a morphism $Ff : Fc \ra Fc'$. 
   \begin{center}
     \begin{tikzcd}
-      H(Fc) & K(Fc)
+      H(Fc) \arrow[r, "\beta_{Fc}"] \arrow[d, "H(Ff)"] & K(Fc) \arrow[d, "K(Ff)"] \\
+      H(Fc') \arrow[r, "\beta_{Fc'}"] & K(Fc')
     \end{tikzcd}
   \end{center}
-  Hence by funtoriality of $L$,
+
+  Hence we may apply $L$ to the common composite and by functoriality we have the following.
   \begin{align*}
     L(\beta_{Fc'} \circ HFf) &= L(KFf \circ \beta_{Fc}) \\
     L(\beta_{Fc'})L(HFf) &= L(KFf)L(\beta_{Fc})
   \end{align*}
-  so the diagram commutes and $L\beta F$ is natural.
+  Thus the diagram for $L\beta F$ commutes so it is natural. ///
 
 
 
@@ -316,7 +318,7 @@
 
   We have $F(\id_c, \id_d) = K_{c'}(\id_d) \circ \alpha_d = \id_{K_{c}(d)} \circ \id_{K_{c}(d)} = \id_{K_{c}(d)}$ by functoriality of $K_c$ and (I'm not sure this works because $\alpha_d$ need not be the identity)
 
-  Hence there is a bijection between $C \times D \ra E$ and $C \ra E^D$. 
+  \hl{how is the above equivalent to showing this? $\ra$} Hence there is a bijection between $C \times D \ra E$ and $C \ra E^D$. 
 
 
 \end{document}
