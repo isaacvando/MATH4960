@@ -70,16 +70,26 @@
 \newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
 
 \lhead{Isaac Van Doren}
-\chead{Chapter 1}
+\chead{Chapter 2}
 \rhead{\today}
 \lfoot{}
 \rfoot{Category Theory}
 
 \begin{document}
   \subsection*{Section 1}
-  \exercise{1.1.i} 
+  \exercise{2.1.i} 
 
 
-  \exercise{1.1.ii}
+  \exercise{2.1.ii} If $F$ is representable then we have a natural isomorphism $\alpha$ and the following commutative square:
+  \begin{center}
+    \begin{tikzcd}
+        Fx \arrow[r, "\alpha_x", leftrightarrow] \arrow[d, "Ff"'] & C(c,x) \arrow[d, "f_*"] \\
+        Fy \arrow[r, "\alpha_y", leftrightarrow] & C(c,y)
+    \end{tikzcd}
+  \end{center}
+
+  Now suppose $f$ is monic and pick two morphisms $g,h : W \rightrightarrows C(c,x)$ for some set $W$, such that $f_* g = f_* h$. This is equivalent to saying $\forall w \in W, f_*(g(w)) = f_*(h(w)) \implies f \circ (g(w)) = f \circ (h(w)) \implies g(w) = h(w) \implies g = h$ by the fact that $f$ is monic. Hence $f_*$ is monic. 
+
+  Now, by the square, we have $\alpha_y Ff = f_* \alpha_x \implies Ff = \alpha_y^{-1} f_* \alpha_x$. Hence $Ff$ is a composition of three injective maps which together are also injective. Therefore $F$ preserves monomorphisms. ///
  
 \end{document}
