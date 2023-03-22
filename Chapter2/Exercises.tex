@@ -77,7 +77,20 @@
 
 \begin{document}
   \subsection*{Section 1}
-  \exercise{2.1.i} 
+  \exercise{2.1.i} The question asks us to the consider natural transformations between $\mathbf{Cat}(\mathbf{1},-)$ and $\mathbf{Cat}(\mathbf{2},-)$ induced by functors between $\mathbf{1}$ and $\mathbf{2}$.
+
+  For the collapsing functor $! : \mathbf{2} \ra \mathbf{1}$, we have the following naturality square:
+  \begin{center}
+    \begin{tikzcd}
+        \mathbf{Cat}(\mathbf{1},x) \arrow[r, "!^*"] \arrow[d, "f_*"] & \mathbf{Cat}(\mathbf{2},x) \arrow[d, "f_*"] \\
+        \mathbf{Cat}(\mathbf{1},y) \arrow[r, "!^*"] & \mathbf{Cat}(\mathbf{2},y)
+    \end{tikzcd}
+  \end{center}
+  This diagram commutes because for any suitable input $x$, $f_*!^*(x) = !xf = !^*f_*(x)$. 
+
+  We achieve similar results for $0$ and $2$ by drawing a similar diagram for natural transformations from $\mathbf{Cat}(\mathbf{2},-) \ra \mathbf{Cat}(\mathbf{1},-)$. 
+
+  \hl{what else should be said about these natural transformations?}
 
 
   \exercise{2.1.ii} If $F$ is representable then we have a natural isomorphism $\alpha$ and the following commutative square:
