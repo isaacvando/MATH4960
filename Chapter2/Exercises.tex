@@ -116,5 +116,16 @@
   $$ \text{Hom}(C(-,c), F) \cong Fc $$
   ///
 
-  \exercise{2.2.ii}
+  \exercise{2.2.ii} It does not dualize to that because that is just not the dual statement. ///
+
+  \exercise{2.2.iii} Pick two objects $c,d \in \omega$ and consider $\omega(c,d)$ and $\mathbf{Set}^{\omega^\op}(yc, yd) = \mathbf{Set}^{\omega^\op}(\omega(-,c), \omega(-,d))$. Because $\omega$ is a poset, there is at most one morphism in $\omega(c,d)$
+
+
+  \exercise{2.2.iv} Suppose $f : x \ra y$ is an isomorphism. Then $f_* : C(-,x) \ra C(-,y)$ defines a natural transformation one direction and $(f^{-1})_* = f_*^{-1}$ defines the other direction.
+
+  Suppose $f_*$ is a natural isomorphism. Then $f_*$ has an inverse, $f_*^{-1}$. This means that we have $f_* \circ f_*^{-1} = \id_y$ and $f_*^{-1} \circ f_* = \id_x$. So, for suitable morphisms, $h,k$, we have $f_*^{-1}(f_*(h)) = f_*^{-1}(fh) = h$ and $f_*(f_*^{-1}(k)) = ff_*^{-1}(k) = k$
+
+  (INSERT PROOF) hence $f$ is an isomorphism. 
+
+  The same reasoning applies for $f^*$. 
 \end{document}
